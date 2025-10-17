@@ -945,26 +945,7 @@ letter-spacing: 0px;
             </button>
 
 
-            <!-- Lightbox for video playback --> 
-
-            <div class="video-lightbox" id="videoLightbox">
-                <div class="lightbox-overlay" onclick="closeLightbox()"></div>
-                <div class="lightbox-content">
-                    <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
-                    <div class="lightbox-loading" id="lightboxLoading">
-                    <div class="spinner"></div>
-                    <div>Loading video...</div>
-                    </div>
-                    <iframe
-                    class="lightbox-video"
-                    id="lightboxVideo"
-                    src=""
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen>
-                    </iframe>
-                </div>
-            </div>
+           
 
         </div>
 
@@ -1115,12 +1096,7 @@ let currentPosition = 0;
 
 
 
-        // YouTube URL processing
-        // function getYouTubeVideoId(url) {
-        //     const regex = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/;
-        //     const match = url.match(regex);
-        //     return match ? match[1] : null;
-        // }
+    
         function getYouTubeVideoId(url) {
                 const match = url.match(/(?:youtube\.com\/(?:watch\?v=|embed\/)|youtu\.be\/)([\w-]{11})/);
                 return match ? match[1] : null;
@@ -1138,33 +1114,7 @@ function playVideo(videoUrl, videoIndex) {
     loading.style.display = 'block';
     iframe.style.display = 'none';
 
-    //console.log(`The video url: ${videoUrl} , ${videoIndex}`);
-    // alert (`The video url: ${videoUrl} , ${videoIndex}`);
-
-    // function convertToEmbedUrl(url) {
-    //         const videoId = getYouTubeVideoId(url);
-    //         return videoId ? `https://www.youtube.com/embed/${videoId}` : null;
-    // }
-    
-    // const videoId = convertToEmbedUrl(videoUrl);
-    
-    // if (videoId) {
-    //     const embedUrl = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1&iv_load_policy=3&origin=${encodeURIComponent(window.location.origin)}&enablejsapi=1&playsinline=1`;
-        
-        
-    //     console.log(`The video url: ${embedUrl}`);
-
-    //     iframe.src = embedUrl;
-        
-    //     // Add delay to ensure proper loading
-    //     setTimeout(() => {
-    //         loading.style.display = 'none';
-    //         iframe.style.display = 'block';
-    //     }, 1000);
-    //     } else {
-    //         loading.innerHTML = '<div style="color: red;">Invalid YouTube URL</div>';
-    //     }
-    // }
+   
 
                function convertToEmbedUrl(url) {
                     const videoId = getYouTubeVideoId(url);
