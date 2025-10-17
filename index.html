@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IGIHE - Umunsi Mu Makuru</title>
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        a{
+            text-decoration: none
+        }
+        
+        body {
+              font-family: "Raleway", sans-serif;
+
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            padding: 30px;
+        }
+        
+        /* Header */
+        header {
+           
+            
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            padding-top: 30px;
+            padding-bottom: 30px;
+            font-weight: bold;
+            color: white;
+            display: flex;
+            align-items: center;
+            height: -webkit-fill-available;
+            padding-left: 30px;
+
+            gap: 10px;
+            width: 70%;
+            background-color: #1176BB;
+        }
+        
+       
+        
+        .nau-badge {
+            background-color: transparent;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .skol-title {
+            font-size: 11px;
+            color: #282F2F;
+        }
+        /* Section Title */
+        .section-title {
+            background-color: transparent;
+            font-size: 24px;
+            padding: 15px 0;
+            margin-bottom: 10px;
+            font-weight: 700;
+            color: #2C2C34;
+        }
+        
+        /* Main Article */
+        .main-article {
+            
+            margin-bottom: 30px;
+        }
+
+        .main-article-wrapper {
+                   
+            padding-top: 20px;
+            padding-right: 30px;
+            padding-bottom: 20px;
+            padding-left: 30px;
+            gap: 17px;
+            box-shadow: #0C0C0D0D 0px 1px 4px;     
+            opacity: 1;
+            border-radius: 1px;
+            display: flex;
+            flex-direction: column;
+
+        }
+        
+        .main-article img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border-radius: 4px;
+        }
+        
+        .main-article h2 {
+            font-size: 20px;
+            color: #282F2F;
+            line-height: 1.3;
+        }
+        
+        .divider{
+            height: 1px;
+            background-color: #85858580;
+            display: block;
+            position: relative;
+        }
+
+        .divider::after{
+            content: "";
+            position: absolute;
+            display: block;
+            height: 2px;
+            top: -1px;
+            width: 7%;
+            background-color: #1176BB;
+            
+        }
+        .main-article p {
+            font-size: 14px;
+            color: #333333;
+            line-height: 1.6;
+        }
+        
+        /* Article Grid */
+        .article-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 19px;
+            margin-bottom: 30px;
+         }
+        
+        .article-item {
+            display: flex;
+            padding: 20px;
+            gap: 20px;
+            border-radius: 1px;
+            border: 1px solid #F0F0F0;
+            box-shadow: #0C0C0D0D 0px 1px 4px;            
+
+        }
+        
+    
+        .article-item img {
+            width: 30%;
+            height: 130px;
+            object-fit: cover;
+            border-radius: 0;
+            flex-shrink: 0;
+        }
+
+        .article-content{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .article-content h3 {
+            font-size: 14px;
+            color: #282F2F;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+        
+        .article-content p {
+            font-size: 12px;
+            color: #282F2F;
+        }
+        
+        /* Video Section */
+        .video-section {
+            /* padding: 20px; */
+        }
+        
+        .video-section h2 {
+            font-size: 16px;
+            margin-bottom: 25px;
+            color: #1176BB;
+            position: relative;
+        }
+        .video-section h2::after{
+            content: "";
+            position: absolute;
+            display: block;
+            height: 4px;
+            right: 0;
+            top: 50%;
+            width: 82%;
+            background-color: #F0F0F0;
+            
+        }
+        
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+        
+        .video-item {
+            position: relative;
+            background-color: #000;
+            aspect-ratio: 1;
+            border-radius: 4px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        
+        .video-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.8;
+        }
+        
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255, 0, 0, 0.8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: white;
+        }
+        
+        .video-label {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            right: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px;
+            font-size: 11px;
+            border-radius: 2px;
+        }
+        
+        /* Footer */
+        footer {
+            margin-top: 40px;
+            /* padding: 20px; */
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            
+        }
+
+        .footer-top, .footer-below {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #1176BB12;
+            padding: 20px;
+
+        }
+        
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            align-items: center;
+
+           
+        }
+        
+        /* .social-icons a {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-color: #1e5a96;
+            color: white;
+            border-radius: 4px;
+            text-align: center;
+            line-height: 30px;
+            font-size: 16px;
+            text-decoration: none;
+        }
+         */
+        .footer-below {
+            font-size: 13px;
+            color: #414141;
+            
+        }
+        
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+            
+            .video-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .article-item {
+                flex-direction: column;
+            }
+            
+            .article-item img {
+                width: 100%;
+                height: auto;
+            }
+              .main-article img{
+                margin-bottom: 0;
+                height: 300px;
+              }
+              .main-article-wrapper{
+                padding-left: 10px;
+                padding-top: 0;
+              }
+        }
+
+        /* Video section styles */
+          
+
+
+
+
+          /* Added styles */
+
+
+          .youtube-videos-section-title{
+            margin-bottom: 30px;
+          }
+           .video-carousel-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+        }
+
+        .section-header {
+            margin-bottom: 24px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #0f0f0f;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .carousel-wrapper {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carousel-track {
+            display: flex;
+            gap: 16px;
+            transition: transform 0.3s ease;
+            width: calc(100% + 32px);
+        }
+
+        .video-card {
+           min-width: 34%;
+           min-height: 200px;
+            background: white;
+            border-radius: 0;
+            overflow: hidden;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            position: relative;
+            background-image: url('/images2.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            padding: 15px 20px;
+                    align-items: end;
+        display: flex;
+    
+        }
+
+          .video-card::after{
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.25) 25%, rgba(0, 0, 0, 0.5) 50%, #000000 100%);
+          }
+
+
+
+
+        .video-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transform: translateY(-2px);
+        }
+
+        .thumbnail-container {
+            position: relative;
+            width: 100%;
+            height: 180px;
+            background: #000;
+            overflow: hidden;
+        }
+
+        .video-thumbnail {
+            width: 100%;
+            position: absolute;
+            height: 100%;
+            left: 0;
+            top: 0;
+
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .video-thumbnail img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        #carouselTrack .nav-button:hover{
+            background-color: #fff;
+        }
+
+        /* Sample thumbnails */
+       
+        .play-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 68px;
+            height: 48px;
+            background: rgba(0,0,0,0.8);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .video-card:hover .play-overlay {
+            background: #ff0000;
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+
+        .play-icon {
+            width: 0;
+            height: 0;
+            border-left: 15px solid white;
+            border-top: 9px solid transparent;
+            border-bottom: 9px solid transparent;
+            margin-left: 3px;
+        }
+
+        .duration-badge {
+            position: absolute;
+            bottom: 8px;
+            right: 8px;
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 2px 4px;
+            border-radius: 2px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .video-info {
+            padding: 12px;
+        }
+
+        .video-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #0f0f0f;
+            line-height: 1.3;
+            margin-bottom: 4px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .video-meta {
+            font-size: 13px;
+            color: #606060;
+            line-height: 1.2;
+        }
+
+        .channel-name {
+            margin-bottom: 2px;
+        }
+
+        .video-stats {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .nav-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 28px;
+            height: 40px;
+            background: white;
+            border: none;
+            border-radius: 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            transition: all 0.2s ease;
+        }
+
+        .nav-button:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            transform: translateY(-50%) scale(1.05);
+        }
+
+        .nav-button:active {
+            transform: translateY(-50%) scale(0.95);
+        }
+
+        .nav-prev {
+            left: 0px;
+        }
+
+        .nav-next {
+            right: 0px;
+        }
+
+        .nav-arrow {
+            width: 0;
+            height: 0;
+        }
+
+        .nav-prev .nav-arrow {
+            border-right: 8px solid #606060;
+            border-top: 6px solid transparent;
+            border-bottom: 6px solid transparent;
+            margin-right: 2px;
+        }
+
+        .nav-next .nav-arrow {
+            border-left: 8px solid #606060;
+            border-top: 6px solid transparent;
+            border-bottom: 6px solid transparent;
+            margin-left: 2px;
+        }
+
+        @media (max-width: 768px) {
+            .video-card {
+                min-width: 280px;
+            }
+            
+            .nav-button {
+                display: none;
+            }
+        }
+        .card-details{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 10;
+            position: relative;
+        }
+
+
+       .card-details .heading-title{
+          color: #fff;
+  font-weight: 500;
+font-size: 15px;
+line-height: 19px;
+letter-spacing: 0px;
+ margin-bottom: 0;
+
+       }
+
+
+
+       /* Lightbox Styles */
+        .video-lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .video-lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            position: relative;
+            background: #000;
+            border-radius: 8px;
+            overflow: hidden;
+            max-width: 90vw;
+            max-height: 90vh;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .lightbox-video {
+            width: 65vw!important;
+            height: auto;
+            min-height: 315px;
+        }
+
+        /* Responsive video sizing */
+        @media (min-width: 768px) {
+            .lightbox-video {
+                width: 80vw;
+                height: 45vw; /* 16:9 aspect ratio */
+                max-width: 1280px;
+                max-height: 720px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .lightbox-video {
+                width: 90vw;
+                height: 50.6vw; /* 16:9 aspect ratio */
+            }
+        }
+
+        .lightbox-close {
+            position: absolute;
+            
+            right: 0;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            z-index: 10000;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: background-color 0.2s ease;
+        }
+
+        .lightbox-close:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .lightbox-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+
+        /* Loading spinner */
+        .lightbox-loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 18px;
+        }
+
+        .spinner {
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-top: 3px solid white;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 10px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Fade in animation */
+        .video-lightbox {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .video-lightbox.active {
+            opacity: 1;
+        }
+
+        .lightbox-content {
+            transform: scale(0.7);
+            transition: transform 0.3s ease;
+        }
+
+        .video-lightbox.active .lightbox-content {
+            transform: scale(1);
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="logo">
+                <a href="https://www.igihe.com">
+                    <img src="./assets/igihe-logo.png" alt="IGIHE Logo" style="height:20px; width:aut160px;">
+                </a>
+            </div>
+            <div class="nau-badge">
+                 <p class="skol-title">Muyigezwaho Ku bufatanye na:</p>
+                 <img src="./assets/skol-logo.png" alt="skol logo" style="height: 49px; width: 74px;">
+            </div>
+        </header>
+        
+        <!-- Section Title -->
+        <div class="section-title">UMUNSI MU MAKURU</div>
+        
+        <!-- Main Article -->
+        <div class="main-article">
+            <img src="./assets/macron-1.webp" alt="Main news image">
+            <div class="main-article-wrapper">
+                
+                <h2>'It was a joke': President Macron shrugs off viral push from wife</h2>
+                <span class="divider"></span>
+                <p>Ndows ndibita inyang imeganigije Ijorge bayitinimja mu gutura iturike Ijowe mukinata mwebisigimje etora mwetemije intende. Utororo ngantemwimije...</p>
+            </div>
+            
+        </div>
+        
+        <!-- Articles Grid -->
+        <div class="article-grid">
+            <div class="article-item">
+                <img src="./assets/public-safety.jpg" alt="Article thumbnail">
+                <div class="article-content">
+                    <h3>Government Urges Enhanced Security Measures in Possible Facility Concerns</h3>
+                    <p>Iton kica mu wita mu methods of respiratory and danger seen k Torojeto ibetin imuwemje mu measure jeju imuwiteria i frw</p>
+                </div>
+            </div>
+            
+            <div class="article-item">
+                <img src="./assets/Kagame-image.jpg" alt="Article thumbnail">
+                <div class="article-content">
+                    <h3>New Legislation Aims to Strengthen Community Policing Initiatives</h3>
+                    <p>I toro kica wita mu methods of respiratory artisanes with irony Torojeto ibetin imuwemje mu measure</p>
+                </div>
+            </div>
+
+             <div class="article-item">
+                <img src="./assets/School-desk.webp" alt="Article thumbnail">
+                <div class="article-content">
+                    <h3>New Legislation Aims to Strengthen Community Policing Initiatives</h3>
+                    <p>I toro kica wita mu methods of respiratory artisanes with irony Torojeto ibetin imuwemje mu measure</p>
+                </div>
+            </div>
+            
+            <div class="article-item">
+                <img src="./assets/leaders.jpg" alt="Article thumbnail">
+                <div class="article-content">
+                    <h3>New Legislation Aims to Strengthen Community Policing Initiatives</h3>
+                    <p>Iton kica mu wita mu methods of respiratory and danger seen k Torojeto ibetin imuwemje mu measure</p>
+                </div>
+            </div>
+            
+            <div class="article-item">
+                <img src="./assets/Evariste.jpg" alt="Article thumbnail">
+                <div class="article-content">
+                    <h3>New Legislation Aims to Strengthen Community Policing Initiatives</h3>
+                    <p>I toro kica wita mu methods of respiratory artisanes with irony Torojeto ibetin imuwemje mu measure</p>
+                </div>
+            </div>
+        </div>
+        
+
+        
+        <!-- Video Section -->
+        
+        <div class="carousel-wrapper">
+            <div class="carousel-track" id="carouselTrack">
+                <!-- Repeat this block for each video -->
+                <div class="video-card" onclick="playVideo('VIDEO_URL', 0)">
+                        <div class="video-thumbnail">
+                            <img src="./assets/Hails.jpg" alt="Video Thumbnail">
+                        </div>
+                        <div class="card-details">
+                            <span>
+                            <svg width="32" height="33" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_1216_2598)">
+                                <path d="M16 31.43C24.4831 31.43 31.36 24.5531 31.36 16.07C31.36 7.58687 24.4831 0.709961 16 0.709961C7.51691 0.709961 0.639999 7.58687 0.639999 16.07C0.639999 24.5531 7.51691 31.43 16 31.43Z" fill="white"/>
+                                <path d="M16 0.0700684C7.168 0.0700684 0 7.23807 0 16.0701C0 24.9021 7.168 32.0701 16 32.0701C24.832 32.0701 32 24.9021 32 16.0701C32 7.23807 24.832 0.0700684 16 0.0700684Z" fill="#EE0120"/>
+                                <path d="M11.52 23.2701V8.87012L21.12 16.0701L11.52 23.2701Z" fill="white"/>
+                                </g>
+                                <defs>
+                                <clipPath id="clip0_1216_2598">
+                                    <rect width="32" height="32" fill="white" transform="translate(0 0.0700684)"/>
+                                </clipPath>
+                                </defs>
+                            </svg>
+                            </span>
+                            <p class="heading-title">Hail shatters windows in Nebraska</p>
+                        </div>
+                </div>
+
+                <div class="video-card" onclick="playVideo('VIDEO_URL', 0)">
+                        <div class="video-thumbnail">
+                            <img src="./assets/Kagame-image.jpg" alt="Video Thumbnail">
+                        </div>
+                        <div class="card-details">
+                            <span>
+                            <svg width="32" height="33" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_1216_2598)">
+                                <path d="M16 31.43C24.4831 31.43 31.36 24.5531 31.36 16.07C31.36 7.58687 24.4831 0.709961 16 0.709961C7.51691 0.709961 0.639999 7.58687 0.639999 16.07C0.639999 24.5531 7.51691 31.43 16 31.43Z" fill="white"/>
+                                <path d="M16 0.0700684C7.168 0.0700684 0 7.23807 0 16.0701C0 24.9021 7.168 32.0701 16 32.0701C24.832 32.0701 32 24.9021 32 16.0701C32 7.23807 24.832 0.0700684 16 0.0700684Z" fill="#EE0120"/>
+                                <path d="M11.52 23.2701V8.87012L21.12 16.0701L11.52 23.2701Z" fill="white"/>
+                                </g>
+                                <defs>
+                                <clipPath id="clip0_1216_2598">
+                                    <rect width="32" height="32" fill="white" transform="translate(0 0.0700684)"/>
+                                </clipPath>
+                                </defs>
+                            </svg>
+                            </span>
+                            <p class="heading-title">Video Title Here...</p>
+                        </div>
+                </div>
+
+                <div class="video-card" onclick="playVideo('VIDEO_URL', 1)">
+                        <div class="video-thumbnail">
+                            <img src="./assets/Bruce-melody.jpg" alt="Video Thumbnail">
+                        </div>
+                        <div class="card-details">
+                            <span>
+                            <svg width="32" height="33" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_1216_2598)">
+                                <path d="M16 31.43C24.4831 31.43 31.36 24.5531 31.36 16.07C31.36 7.58687 24.4831 0.709961 16 0.709961C7.51691 0.709961 0.639999 7.58687 0.639999 16.07C0.639999 24.5531 7.51691 31.43 16 31.43Z" fill="white"/>
+                                <path d="M16 0.0700684C7.168 0.0700684 0 7.23807 0 16.0701C0 24.9021 7.168 32.0701 16 32.0701C24.832 32.0701 32 24.9021 32 16.0701C32 7.23807 24.832 0.0700684 16 0.0700684Z" fill="#EE0120"/>
+                                <path d="M11.52 23.2701V8.87012L21.12 16.0701L11.52 23.2701Z" fill="white"/>
+                                </g>
+                                <defs>
+                                <clipPath id="clip0_1216_2598">
+                                    <rect width="32" height="32" fill="white" transform="translate(0 0.0700684)"/>
+                                </clipPath>
+                                </defs>
+                            </svg>
+                            </span>
+                            <p class="heading-title">Video Title Here...</p>
+                        </div>
+                </div>
+
+                <div class="video-card" onclick="playVideo('VIDEO_URL', 2)">
+                        <div class="video-thumbnail">
+                            <img src="./assets/Bruce-melody.jpg" alt="Video Thumbnail">
+                        </div>
+                        <div class="card-details">
+                            <span>
+                            <svg width="32" height="33" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_1216_2598)">
+                                <path d="M16 31.43C24.4831 31.43 31.36 24.5531 31.36 16.07C31.36 7.58687 24.4831 0.709961 16 0.709961C7.51691 0.709961 0.639999 7.58687 0.639999 16.07C0.639999 24.5531 7.51691 31.43 16 31.43Z" fill="white"/>
+                                <path d="M16 0.0700684C7.168 0.0700684 0 7.23807 0 16.0701C0 24.9021 7.168 32.0701 16 32.0701C24.832 32.0701 32 24.9021 32 16.0701C32 7.23807 24.832 0.0700684 16 0.0700684Z" fill="#EE0120"/>
+                                <path d="M11.52 23.2701V8.87012L21.12 16.0701L11.52 23.2701Z" fill="white"/>
+                                </g>
+                                <defs>
+                                <clipPath id="clip0_1216_2598">
+                                    <rect width="32" height="32" fill="white" transform="translate(0 0.0700684)"/>
+                                </clipPath>
+                                </defs>
+                            </svg>
+                            </span>
+                            <p class="heading-title">Video Title Here...</p>
+                        </div>
+                </div>
+
+                <div class="video-card" onclick="playVideo('VIDEO_URL', 3)">
+                        <div class="video-thumbnail">
+                            <img src="./assets/Bruce-melody.jpg" alt="Video Thumbnail">
+                        </div>
+                        <div class="card-details">
+                            <span>
+                            <svg width="32" height="33" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_1216_2598)">
+                                <path d="M16 31.43C24.4831 31.43 31.36 24.5531 31.36 16.07C31.36 7.58687 24.4831 0.709961 16 0.709961C7.51691 0.709961 0.639999 7.58687 0.639999 16.07C0.639999 24.5531 7.51691 31.43 16 31.43Z" fill="white"/>
+                                <path d="M16 0.0700684C7.168 0.0700684 0 7.23807 0 16.0701C0 24.9021 7.168 32.0701 16 32.0701C24.832 32.0701 32 24.9021 32 16.0701C32 7.23807 24.832 0.0700684 16 0.0700684Z" fill="#EE0120"/>
+                                <path d="M11.52 23.2701V8.87012L21.12 16.0701L11.52 23.2701Z" fill="white"/>
+                                </g>
+                                <defs>
+                                <clipPath id="clip0_1216_2598">
+                                    <rect width="32" height="32" fill="white" transform="translate(0 0.0700684)"/>
+                                </clipPath>
+                                </defs>
+                            </svg>
+                            </span>
+                            <p class="heading-title">Video Title Here...</p>
+                        </div>
+                </div>
+                <!-- End repeat -->
+            </div>
+
+            <button class="nav-button nav-prev" onclick="scrollCarousel(-1)" id="prevBtn">
+                <div class="nav-arrow"></div>
+            </button>
+
+            <button class="nav-button nav-next" onclick="scrollCarousel(1)" id="nextBtn">
+                <div class="nav-arrow"></div>
+            </button>
+
+
+            <!-- Lightbox for video playback --> 
+
+            <div class="video-lightbox" id="videoLightbox">
+                <div class="lightbox-overlay" onclick="closeLightbox()"></div>
+                <div class="lightbox-content">
+                    <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+                    <div class="lightbox-loading" id="lightboxLoading">
+                    <div class="spinner"></div>
+                    <div>Loading video...</div>
+                    </div>
+                    <iframe
+                    class="lightbox-video"
+                    id="lightboxVideo"
+                    src=""
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+        </div>
+
+         
+        
+        <!-- Footer -->
+        <footer>
+
+          
+
+            <div class="footer-top">
+                 <div class="footer-logo">
+                    <svg width="53" height="44" viewBox="0 0 53 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M26.3931 0.67005C24.8838 0.786384 22.2347 1.20577 20.7077 1.5703C18.3059 2.14362 14.5121 3.80144 12.0521 5.35267C8.69311 7.4709 5.98367 10.1506 3.68848 13.6245C1.31862 17.2114 0.233264 19.3871 0.0392665 20.9394C-0.0302556 21.4958 -0.0186865 21.5515 0.165992 21.5515C0.396732 21.5515 1.24599 20.7057 2.22348 19.5022C3.96046 17.3639 7.82863 15.2184 11.1746 14.5374C13.7443 14.0143 16.7959 14.3311 19.9658 15.4499C22.1585 16.2238 24.4991 17.6295 27.0894 19.728C31.1284 23.0004 32.4173 23.9186 34.3737 24.9178C36.5262 26.0172 38.4098 26.4293 40.8545 26.3357C43.0955 26.2499 44.5311 25.7868 46.0397 24.6632C50.1602 21.5944 51.3898 15.8205 48.999 10.7655C46.4486 5.37281 40.9325 1.81786 33.5702 0.82227C32.0268 0.613596 28.1847 0.532077 26.3931 0.67005ZM10.2909 18.0845C8.4839 18.3868 6.72753 19.3102 5.25557 20.7321C1.90961 23.9639 1.32269 29.0528 3.73968 33.875C4.96869 36.3272 6.86347 38.5326 8.87864 39.8568C11.5294 41.5986 15.4229 43.0884 18.6267 43.5867C20.5407 43.8844 25.622 43.852 27.7074 43.5288C34.7948 42.4303 40.7371 39.6134 45.0323 35.3161C48.0853 32.2615 51.148 27.6807 52.1581 24.6581C52.4294 23.8464 52.552 22.8958 52.3978 22.8005C52.2226 22.6923 51.5977 23.2542 50.813 24.2256C50.4067 24.7286 49.8145 25.3938 49.497 25.7039C48.2935 26.8793 45.4667 28.5378 43.4587 29.2465C39.9383 30.4891 35.4017 30.1711 31.4559 28.4052C29.3834 27.4776 27.9974 26.5516 23.3282 22.9742C20.1093 20.508 17.784 19.1075 15.8976 18.4993C14.1215 17.9266 12.12 17.7786 10.2909 18.0845Z" fill="url(#paint0_radial_2860_1529)"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M26.3931 0.67005C24.8838 0.786384 22.2347 1.20577 20.7077 1.5703C18.3059 2.14362 14.5121 3.80144 12.0521 5.35267C8.69311 7.4709 5.98367 10.1506 3.68848 13.6245C1.31862 17.2114 0.233264 19.3871 0.0392665 20.9394C-0.0302556 21.4958 -0.0186865 21.5515 0.165992 21.5515C0.396732 21.5515 1.24599 20.7057 2.22348 19.5022C3.96046 17.3639 7.82863 15.2184 11.1746 14.5374C13.7443 14.0143 16.7959 14.3311 19.9658 15.4499C22.1585 16.2238 24.4991 17.6295 27.0894 19.728C31.1284 23.0004 32.4173 23.9186 34.3737 24.9178C36.5262 26.0172 38.4098 26.4293 40.8545 26.3357C43.0955 26.2499 44.5311 25.7868 46.0397 24.6632C50.1602 21.5944 51.3898 15.8205 48.999 10.7655C46.4486 5.37281 40.9325 1.81786 33.5702 0.82227C32.0268 0.613596 28.1847 0.532077 26.3931 0.67005ZM10.2909 18.0845C8.4839 18.3868 6.72753 19.3102 5.25557 20.7321C1.90961 23.9639 1.32269 29.0528 3.73968 33.875C4.96869 36.3272 6.86347 38.5326 8.87864 39.8568C11.5294 41.5986 15.4229 43.0884 18.6267 43.5867C20.5407 43.8844 25.622 43.852 27.7074 43.5288C34.7948 42.4303 40.7371 39.6134 45.0323 35.3161C48.0853 32.2615 51.148 27.6807 52.1581 24.6581C52.4294 23.8464 52.552 22.8958 52.3978 22.8005C52.2226 22.6923 51.5977 23.2542 50.813 24.2256C50.4067 24.7286 49.8145 25.3938 49.497 25.7039C48.2935 26.8793 45.4667 28.5378 43.4587 29.2465C39.9383 30.4891 35.4017 30.1711 31.4559 28.4052C29.3834 27.4776 27.9974 26.5516 23.3282 22.9742C20.1093 20.508 17.784 19.1075 15.8976 18.4993C14.1215 17.9266 12.12 17.7786 10.2909 18.0845Z" fill="#1076BA"/>
+                        <defs>
+                        <radialGradient id="paint0_radial_2860_1529" cx="0" cy="0" r="1" gradientTransform="matrix(42.1706 31.4791 -38.2394 96.097 -7.21654 -4.73839)" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#98F9FF"/>
+                        <stop offset="1" stop-color="white" stop-opacity="0"/>
+                        </radialGradient>
+                        </defs>
+                    </svg>
+
+                </div>
+                <div class="social-icons">
+                    <a href="#" title="Whatsapp">
+                        <svg width="17" height="20" viewBox="0 0 17 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M10.9035 10.6275C10.9469 10.6275 11.0706 10.6739 11.2748 10.7667C11.479 10.8595 11.6971 10.9663 11.9292 11.087C12.1612 11.2076 12.3732 11.3236 12.565 11.435C12.7568 11.5464 12.862 11.6207 12.8806 11.6578C12.893 11.6825 12.9007 11.7088 12.9038 11.7367C12.9069 11.7645 12.9084 11.7908 12.9084 11.8156C12.9084 11.9455 12.8899 12.0817 12.8527 12.224C12.8156 12.3663 12.7723 12.4993 12.7228 12.6231C12.6052 12.9201 12.3453 13.1568 11.9431 13.3332C11.5409 13.5095 11.1913 13.5977 10.8943 13.5977C10.6344 13.5977 10.2894 13.5142 9.85933 13.3471C9.42927 13.18 9.09976 13.0439 8.87081 12.9387C8.49335 12.7654 8.14992 12.5643 7.84052 12.3354C7.52494 12.1064 7.23256 11.8543 6.96338 11.5789C6.69421 11.3035 6.43896 11.0081 6.19763 10.6925C5.96249 10.3831 5.73044 10.0613 5.50149 9.72716C5.29729 9.43014 5.11938 9.10373 4.96778 8.74792C4.81618 8.39212 4.74347 8.03167 4.74966 7.66658V7.58305C4.76203 7.23033 4.83165 6.92249 4.9585 6.6595C5.08535 6.39651 5.27563 6.14435 5.52933 5.90303C5.60978 5.82877 5.69486 5.77153 5.78459 5.73131C5.87431 5.69109 5.97486 5.67098 6.08625 5.67098C6.14813 5.67098 6.21155 5.67562 6.27653 5.6849C6.3415 5.69418 6.40802 5.69882 6.47609 5.69882C6.61841 5.69882 6.71587 5.72512 6.76846 5.77772C6.82106 5.83032 6.87211 5.92468 6.92162 6.06082C6.94018 6.11032 6.98349 6.2217 7.05156 6.39497C7.11963 6.56823 7.18924 6.75386 7.2604 6.95188C7.33157 7.14989 7.39499 7.33243 7.45068 7.49951C7.50637 7.66658 7.53422 7.76559 7.53422 7.79653C7.53422 7.99454 7.41356 8.1972 7.17223 8.40449C6.9309 8.61179 6.81023 8.77422 6.81023 8.89179C6.81023 8.92273 6.81487 8.95057 6.82416 8.97533C6.83344 9.00008 6.84427 9.02792 6.85664 9.05886C6.97421 9.30638 7.13355 9.56163 7.33466 9.82462C7.53577 10.0876 7.73842 10.315 7.94262 10.5068C8.18395 10.742 8.43611 10.9431 8.69909 11.1102C8.96208 11.2772 9.24208 11.435 9.5391 11.5835C9.57623 11.6021 9.61491 11.6191 9.65513 11.6346C9.69535 11.6501 9.73712 11.6578 9.78043 11.6578C9.93513 11.6578 10.1254 11.4861 10.3513 11.1426C10.5771 10.7992 10.7612 10.6275 10.9035 10.6275ZM8.75014 16.243C9.66596 16.243 10.5292 16.0698 11.3398 15.7233C12.1442 15.3705 12.8481 14.8925 13.4514 14.2892C14.0547 13.6859 14.5328 12.982 14.8855 12.1776C15.232 11.367 15.4052 10.5037 15.4052 9.58793C15.4052 8.66593 15.232 7.80272 14.8855 6.99829C14.5328 6.18767 14.0547 5.4807 13.4514 4.87738C12.8481 4.27406 12.1442 3.79913 11.3398 3.45261C10.5292 3.0999 9.66596 2.92354 8.75014 2.92354C7.82815 2.92354 6.96493 3.0999 6.1605 3.45261C5.34988 3.79913 4.64292 4.27406 4.03959 4.87738C3.43627 5.4807 2.96135 6.18767 2.61483 6.99829C2.26211 7.80272 2.08576 8.66593 2.08576 9.58793C2.08576 9.93445 2.1136 10.281 2.1693 10.6275C2.22499 10.9678 2.30543 11.3035 2.41062 11.6346C2.51582 11.9656 2.64886 12.2859 2.80974 12.5953C2.97063 12.9047 3.15317 13.2017 3.35738 13.4863L2.52201 15.9646L5.0838 15.1478C5.35607 15.321 5.64072 15.4757 5.93774 15.6119C6.22857 15.7542 6.52868 15.8718 6.83808 15.9646C7.14747 16.0574 7.46306 16.1286 7.78483 16.1781C8.10041 16.2214 8.42219 16.243 8.75014 16.243ZM8.75014 1.58695C9.85159 1.58695 10.8881 1.79734 11.8596 2.21812C12.8311 2.6389 13.6788 3.21128 14.4028 3.93527C15.1268 4.65926 15.6992 5.50391 16.12 6.46922C16.5345 7.44072 16.7418 8.48029 16.7418 9.58793C16.7418 10.6894 16.5345 11.7259 16.12 12.6974C15.6992 13.6689 15.1268 14.5166 14.4028 15.2406C13.6788 15.9646 12.8311 16.537 11.8596 16.9577C10.8881 17.3723 9.85159 17.5796 8.75014 17.5796C8.40981 17.5796 8.07257 17.5611 7.73842 17.5239C7.40427 17.4806 7.07477 17.4172 6.7499 17.3337C6.42504 17.2501 6.10481 17.1465 5.78923 17.0227C5.47983 16.899 5.17662 16.7535 4.8796 16.5865L0.452148 18.0066L1.89084 13.7091C1.7052 13.3997 1.54122 13.0779 1.3989 12.7438C1.25658 12.4158 1.13746 12.077 1.04155 11.7274C0.945635 11.3778 0.872927 11.0235 0.823423 10.6646C0.77392 10.3057 0.749168 9.94683 0.749168 9.58793C0.749168 8.48029 0.959558 7.44072 1.38034 6.46922C1.80111 5.50391 2.3735 4.65926 3.09748 3.93527C3.82147 3.21128 4.66612 2.6389 5.63143 2.21812C6.60294 1.79734 7.64251 1.58695 8.75014 1.58695Z" fill="#282F2F"/>
+                        </svg>
+
+                    </a>
+                    <a href="#" title="Facebook">
+                        <svg width="12" height="24" viewBox="0 0 12 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10.2112 3.8214V6.40929H8.67731C8.07176 6.40929 7.68186 6.54068 7.50762 6.80347C7.33338 7.06626 7.24626 7.40617 7.24626 7.8232V9.67414H10.1169L9.73132 12.5705H7.24626V20H4.24705V12.5705H1.75342V9.67414H4.24705V7.53185C4.24705 6.91487 4.33845 6.3693 4.52126 5.89514C4.69836 5.41527 4.95115 5.01394 5.27963 4.69117C5.60812 4.3684 6.00087 4.12418 6.45789 3.95851C6.92063 3.79284 7.42621 3.71 7.97464 3.71C8.50593 3.71 8.97866 3.72428 9.39284 3.75285C9.80701 3.78141 10.0798 3.80426 10.2112 3.8214Z" fill="#282F2F"/>
+                        </svg>
+
+                    </a>
+                    <a href="#" title="Twitter">
+                        <svg width="18" height="24" viewBox="0 0 18 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M16.5312 10.3854C16.5312 10.3854 16.5298 10.3854 16.5269 10.3854C16.5241 10.3854 16.5198 10.3854 16.5141 10.3854C16.1484 10.3854 15.7914 10.3568 15.4429 10.2997C15.0944 10.2426 14.756 10.1612 14.4275 10.0555C14.099 9.94979 13.7805 9.81696 13.472 9.65701C13.1692 9.50276 12.8807 9.32567 12.6065 9.12572L12.6237 9.14286V14.8242C12.6237 15.5383 12.4866 16.2096 12.2123 16.838C11.9438 17.4664 11.5754 18.0148 11.1069 18.4833C10.6385 18.9517 10.09 19.323 9.46163 19.5972C8.83323 19.8657 8.16197 20 7.44788 20C6.73378 20 6.06253 19.8629 5.43412 19.5887C4.80571 19.3202 4.25729 18.9517 3.78884 18.4833C3.32039 18.0148 2.95192 17.4664 2.68342 16.838C2.4092 16.2096 2.27209 15.5383 2.27209 14.8242C2.27209 14.1101 2.4092 13.4389 2.68342 12.8105C2.95192 12.1821 3.32039 11.6336 3.78884 11.1652C4.25729 10.6967 4.80571 10.3283 5.43412 10.0598C6.06253 9.78554 6.73378 9.64844 7.44788 9.64844C7.57356 9.64844 7.69781 9.65415 7.82064 9.66558C7.94346 9.677 8.06486 9.69128 8.18482 9.70842L8.15912 9.69985V12.562C8.05629 12.5277 7.94346 12.5005 7.82064 12.4805C7.69781 12.4606 7.57356 12.4506 7.44788 12.4506C7.12225 12.4506 6.81376 12.5134 6.52241 12.6391C6.23677 12.7648 5.9854 12.9347 5.76832 13.1489C5.55123 13.3632 5.3827 13.616 5.26274 13.9073C5.13706 14.193 5.07421 14.4986 5.07421 14.8242C5.07421 15.1556 5.13706 15.4641 5.26274 15.7497C5.3827 16.041 5.55123 16.2938 5.76832 16.5081C5.9854 16.7223 6.23677 16.8922 6.52241 17.0179C6.81376 17.1436 7.12225 17.2064 7.44788 17.2064C7.7735 17.2064 8.082 17.1436 8.37335 17.0179C8.65899 16.8922 8.91035 16.7223 9.12743 16.5081C9.34452 16.2938 9.51305 16.041 9.63302 15.7497C9.7587 15.4641 9.82154 15.1556 9.82154 14.8242V3.71H12.6237C12.6237 3.71571 12.6237 3.72 12.6237 3.72285C12.6237 3.72571 12.6237 3.72999 12.6237 3.73571C12.6237 3.85567 12.6294 3.97422 12.6408 4.09133C12.6522 4.20844 12.6665 4.32412 12.6836 4.43838V4.41267C12.7351 4.68117 12.8122 4.93825 12.915 5.1839C13.0178 5.42955 13.1421 5.66091 13.2878 5.878C13.4334 6.09509 13.5977 6.29218 13.7805 6.46927C13.9633 6.65208 14.1633 6.8149 14.3803 6.95772L14.3975 6.96629C14.7003 7.16623 15.0316 7.32333 15.3915 7.43759C15.7514 7.55185 16.1313 7.60897 16.5312 7.60897V10.3854Z" fill="#282F2F"/>
+                        </svg>
+                    </a>
+                    <a href="#" title="Twitter">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                         <path d="M15.5186 1.81571H18.2798L12.2415 8.71388L19.3499 18.1057H13.7893L9.43257 12.4114L4.44525 18.1057H1.67452L8.13319 10.7203L1.33057 1.81571H7.0249L10.9613 7.02278L15.5186 1.81571ZM14.5441 16.4528H16.0823L6.19368 3.38261H4.55035L14.5441 16.4528Z" fill="#282F2F"/>
+                        </svg>
+
+                    </a>
+                    
+
+                    <a href="#" title="Instagram">
+                        <svg width="17" height="20" viewBox="0 0 17 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M11.4019 10.2013C11.4019 9.82388 11.3307 9.47117 11.1884 9.14321C11.0461 8.81525 10.8527 8.52752 10.6083 8.28C10.3639 8.03248 10.0746 7.83756 9.74045 7.69524C9.41249 7.55292 9.06288 7.48176 8.6916 7.48176C8.31414 7.48176 7.96143 7.55292 7.63347 7.69524C7.30551 7.83756 7.01777 8.03248 6.77025 8.28C6.52274 8.52752 6.32782 8.81525 6.18549 9.14321C6.04317 9.47117 5.97201 9.82388 5.97201 10.2013C5.97201 10.5726 6.04317 10.9222 6.18549 11.2502C6.32782 11.5843 6.52274 11.8736 6.77025 12.1181C7.01777 12.3625 7.30551 12.5559 7.63347 12.6982C7.96143 12.8405 8.31414 12.9117 8.6916 12.9117C9.06288 12.9117 9.41249 12.8405 9.74045 12.6982C10.0746 12.5559 10.3639 12.3625 10.6083 12.1181C10.8527 11.8736 11.0461 11.5843 11.1884 11.2502C11.3307 10.9222 11.4019 10.5726 11.4019 10.2013ZM12.8684 10.2013C12.8684 10.7768 12.7602 11.3183 12.5436 11.8257C12.3208 12.3331 12.0207 12.7755 11.6432 13.153C11.2658 13.5304 10.8233 13.8306 10.3159 14.0533C9.80852 14.2699 9.26708 14.3782 8.6916 14.3782C8.10994 14.3782 7.5654 14.2699 7.05799 14.0533C6.55058 13.8306 6.10815 13.5304 5.73068 13.153C5.35322 12.7755 5.0562 12.3331 4.83962 11.8257C4.61686 11.3183 4.50548 10.7768 4.50548 10.2013C4.50548 9.61968 4.61686 9.07515 4.83962 8.56774C5.0562 8.06033 5.35322 7.61789 5.73068 7.24043C6.10815 6.86297 6.55058 6.56595 7.05799 6.34937C7.5654 6.1266 8.10994 6.01522 8.6916 6.01522C9.26708 6.01522 9.80852 6.1266 10.3159 6.34937C10.8233 6.56595 11.2658 6.86297 11.6432 7.24043C12.0207 7.61789 12.3208 8.06033 12.5436 8.56774C12.7602 9.07515 12.8684 9.61968 12.8684 10.2013ZM14.0101 5.84815C14.0101 6.12042 13.9157 6.35092 13.727 6.53965C13.5383 6.72838 13.3078 6.82275 13.0355 6.82275C12.7694 6.82275 12.5405 6.72838 12.3487 6.53965C12.1568 6.35092 12.0609 6.12042 12.0609 5.84815C12.0609 5.57588 12.1568 5.34538 12.3487 5.15665C12.5405 4.96792 12.7694 4.87355 13.0355 4.87355C13.3078 4.87355 13.5383 4.96792 13.727 5.15665C13.9157 5.34538 14.0101 5.57588 14.0101 5.84815ZM8.6916 3.5184C8.39458 3.5184 8.0264 3.5153 7.58706 3.50912C7.14772 3.50293 6.69909 3.50602 6.24119 3.5184C5.78328 3.53077 5.34394 3.56171 4.92316 3.61122C4.49619 3.66072 4.14967 3.73807 3.88359 3.84326C3.69795 3.91752 3.53243 4.0026 3.38701 4.09851C3.24159 4.19443 3.09463 4.31355 2.94612 4.45587C2.8038 4.59819 2.68468 4.7436 2.58877 4.89211C2.49286 5.04062 2.40777 5.2077 2.33352 5.39334C2.22832 5.65942 2.15097 6.00285 2.10147 6.42362C2.05815 6.85059 2.02876 7.29303 2.01329 7.75093C1.99782 8.20884 1.99318 8.65746 1.99937 9.0968C2.00556 9.53615 2.00865 9.90433 2.00865 10.2013C2.00865 10.4984 2.00556 10.8635 1.99937 11.2966C1.99318 11.736 1.99782 12.1846 2.01329 12.6425C2.02876 13.1004 2.05815 13.5428 2.10147 13.9698C2.15097 14.3906 2.22832 14.734 2.33352 15.0001C2.40777 15.1857 2.49286 15.3528 2.58877 15.5013C2.68468 15.6498 2.8038 15.7952 2.94612 15.9375C3.09463 16.0799 3.24159 16.199 3.38701 16.2949C3.53243 16.3908 3.69795 16.4759 3.88359 16.5502C4.14967 16.6553 4.49619 16.7327 4.92316 16.7822C5.34394 16.8317 5.78328 16.8626 6.24119 16.875C6.69909 16.8874 7.14772 16.8905 7.58706 16.8843C8.0264 16.8843 8.39458 16.8843 8.6916 16.8843C8.98862 16.8843 9.35371 16.8843 9.78686 16.8843C10.2262 16.8905 10.6764 16.8874 11.1374 16.875C11.5984 16.8626 12.0393 16.8317 12.46 16.7822C12.8808 16.7327 13.2242 16.6553 13.4903 16.5502C13.676 16.4759 13.843 16.3908 13.9916 16.2949C14.1401 16.199 14.2855 16.0799 14.4278 15.9375C14.5701 15.7952 14.6892 15.6498 14.7852 15.5013C14.8811 15.3528 14.9661 15.1857 15.0404 15.0001C15.1456 14.734 15.2229 14.3906 15.2725 13.9698C15.322 13.5428 15.3529 13.1004 15.3653 12.6425C15.3776 12.1846 15.3838 11.736 15.3838 11.2966C15.3776 10.8635 15.3746 10.4984 15.3746 10.2013C15.3746 9.90433 15.3776 9.53615 15.3838 9.0968C15.3838 8.65746 15.3776 8.20884 15.3653 7.75093C15.3529 7.29303 15.322 6.85059 15.2725 6.42362C15.2229 6.00285 15.1456 5.65942 15.0404 5.39334C14.9661 5.2077 14.8811 5.04062 14.7852 4.89211C14.6892 4.7436 14.5701 4.59819 14.4278 4.45587C14.2855 4.31355 14.1401 4.19443 13.9916 4.09851C13.843 4.0026 13.676 3.91752 13.4903 3.84326C13.2242 3.73807 12.8808 3.66072 12.46 3.61122C12.0393 3.56171 11.5984 3.53077 11.1374 3.5184C10.6764 3.50602 10.2262 3.50293 9.78686 3.50912C9.35371 3.5153 8.98862 3.5184 8.6916 3.5184ZM16.8318 10.2013C16.8318 10.4798 16.8318 10.7583 16.8318 11.0367C16.838 11.3152 16.8395 11.5952 16.8364 11.8767C16.8334 12.1583 16.8256 12.4383 16.8132 12.7167C16.8071 12.9952 16.7978 13.2767 16.7854 13.5614C16.7668 13.8893 16.7328 14.2049 16.6833 14.5081C16.6338 14.8175 16.5595 15.1146 16.4605 15.3992C16.3615 15.6838 16.2316 15.9592 16.0707 16.2253C15.9098 16.4852 15.7087 16.7358 15.4674 16.9771C15.226 17.2123 14.9754 17.4103 14.7155 17.5712C14.4495 17.732 14.1741 17.8635 13.8895 17.9656C13.6048 18.0677 13.3078 18.1435 12.9984 18.193C12.6952 18.2425 12.3796 18.2766 12.0516 18.2951C11.7732 18.3075 11.4916 18.3168 11.207 18.323C10.9285 18.3354 10.6501 18.3416 10.3716 18.3416C10.0932 18.3416 9.81161 18.3416 9.52697 18.3416C9.24851 18.3416 8.97006 18.3416 8.6916 18.3416C8.40696 18.3416 8.12541 18.3416 7.84695 18.3416C7.56849 18.3416 7.28849 18.3416 7.00694 18.3416C6.72539 18.3416 6.44539 18.3354 6.16693 18.323C5.88847 18.3168 5.60692 18.3075 5.32228 18.2951C5.00051 18.2766 4.68492 18.2425 4.37553 18.193C4.06613 18.1435 3.76911 18.0677 3.48447 17.9656C3.19982 17.8635 2.92756 17.732 2.66766 17.5712C2.40158 17.4103 2.14788 17.2123 1.90655 16.9771C1.67141 16.7358 1.4734 16.4852 1.31251 16.2253C1.15162 15.9592 1.02013 15.6838 0.91803 15.3992C0.81593 15.1146 0.740128 14.8175 0.690624 14.5081C0.641121 14.2049 0.610181 13.8893 0.597806 13.5614C0.579242 13.2767 0.566866 12.9952 0.560678 12.7167C0.55449 12.4383 0.549849 12.1598 0.546755 11.8814C0.543661 11.6029 0.542114 11.3214 0.542114 11.0367C0.542114 10.7583 0.542114 10.4798 0.542114 10.2013C0.542114 9.9167 0.542114 9.63515 0.542114 9.3567C0.542114 9.07824 0.543661 8.79824 0.546755 8.51669C0.549849 8.23514 0.55449 7.95513 0.560678 7.67668C0.566866 7.39822 0.579242 7.11667 0.597806 6.83203C0.610181 6.51025 0.641121 6.19467 0.690624 5.88528C0.740128 5.57588 0.81593 5.27886 0.91803 4.99422C1.02013 4.70957 1.15162 4.43421 1.31251 4.16813C1.4734 3.90824 1.67141 3.65763 1.90655 3.4163C2.14788 3.18116 2.40158 2.98314 2.66766 2.82226C2.92756 2.66137 3.19982 2.52988 3.48447 2.42778C3.76911 2.32568 4.06613 2.24987 4.37553 2.20037C4.68492 2.15087 5.00051 2.11993 5.32228 2.10755C5.60692 2.08899 5.88847 2.07661 6.16693 2.07043C6.44539 2.06424 6.72539 2.0596 7.00694 2.0565C7.28849 2.05341 7.56849 2.05186 7.84695 2.05186C8.12541 2.05186 8.40696 2.05186 8.6916 2.05186C8.97006 2.05186 9.24851 2.05186 9.52697 2.05186C9.81161 2.05186 10.0932 2.05341 10.3716 2.0565C10.6501 2.0596 10.9285 2.06424 11.207 2.07043C11.4916 2.07661 11.7732 2.08899 12.0516 2.10755C12.3796 2.11993 12.6952 2.15087 12.9984 2.20037C13.3078 2.24987 13.6048 2.32568 13.8895 2.42778C14.1741 2.52988 14.4495 2.66137 14.7155 2.82226C14.9754 2.98314 15.226 3.18116 15.4674 3.4163C15.7087 3.65763 15.9098 3.90824 16.0707 4.16813C16.2316 4.43421 16.3615 4.70957 16.4605 4.99422C16.5595 5.27886 16.6338 5.57588 16.6833 5.88528C16.7328 6.19467 16.7668 6.51025 16.7854 6.83203C16.7978 7.11667 16.8101 7.39822 16.8225 7.67668C16.8287 7.95513 16.8334 8.23514 16.8364 8.51669C16.8395 8.79824 16.838 9.07824 16.8318 9.3567C16.8318 9.63515 16.8318 9.9167 16.8318 10.2013Z" fill="#282F2F"/>
+                        </svg>
+                    </a>
+                    <a href="#" title="YouTube">
+                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M10.0291 15.1946L16.2849 11.9592L10.0291 8.68992V15.1946ZM12.416 4.0518C13.6378 4.0518 14.7464 4.06311 15.7419 4.08573C16.7374 4.10836 17.5896 4.13475 18.2985 4.16492C19.0074 4.19509 19.5542 4.22148 19.9388 4.24411C20.331 4.26673 20.5271 4.27805 20.5271 4.27805C20.7533 4.30821 21.0871 4.36289 21.5283 4.44208C21.9694 4.52127 22.4087 4.79465 22.8462 5.26223C22.8462 5.26223 22.9744 5.44512 23.2308 5.81089C23.4872 6.17666 23.6644 6.75925 23.7625 7.55867C23.8303 8.0338 23.8794 8.49384 23.9095 8.9388C23.9397 9.3913 23.9623 9.79289 23.9774 10.1436C23.9925 10.4943 24 10.7752 24 10.9864C24 11.2051 24 11.3144 24 11.3144V13.0679C24 13.0679 24 13.1772 24 13.3959C24 13.6071 23.9925 13.888 23.9774 14.2387C23.9623 14.5894 23.9397 14.991 23.9095 15.4435C23.8794 15.896 23.8303 16.356 23.7625 16.8236C23.6644 17.6155 23.4872 18.1962 23.2308 18.5657C22.9744 18.9353 22.8462 19.12 22.8462 19.12C22.4087 19.5801 21.9694 19.8497 21.5283 19.9289C21.0871 20.0081 20.7533 20.0628 20.5271 20.0929C20.5271 20.0929 20.331 20.1042 19.9388 20.1269C19.5542 20.157 19.0074 20.1872 18.2985 20.2174C17.5896 20.2475 16.7374 20.2739 15.7419 20.2965C14.7464 20.3267 13.6378 20.3418 12.416 20.3418C10.9077 20.3267 9.65201 20.3041 8.64897 20.2739C7.63839 20.2513 6.82954 20.2268 6.22244 20.2004C5.61533 20.174 5.18357 20.1533 4.92716 20.1382C4.67074 20.1155 4.54253 20.1042 4.54253 20.1042C4.28611 20.059 3.90526 19.9987 3.39997 19.9232C2.89468 19.8478 2.42332 19.5801 1.98591 19.12C1.98591 19.12 1.8577 18.9353 1.60128 18.5657C1.34486 18.1962 1.16764 17.6155 1.06959 16.8236C1.00172 16.356 0.952698 15.896 0.922531 15.4435C0.892365 14.991 0.86974 14.5894 0.854656 14.2387C0.839573 13.888 0.832031 13.6071 0.832031 13.3959C0.832031 13.1772 0.832031 13.0679 0.832031 13.0679V11.3144C0.832031 11.3144 0.832031 11.2051 0.832031 10.9864C0.832031 10.7752 0.839573 10.4943 0.854656 10.1436C0.86974 9.79289 0.892365 9.3913 0.922531 8.9388C0.952698 8.49384 1.00172 8.0338 1.06959 7.55867C1.16764 6.75925 1.34486 6.17666 1.60128 5.81089C1.8577 5.44512 1.98591 5.26223 1.98591 5.26223C2.42332 4.79465 2.86263 4.52127 3.30381 4.44208C3.745 4.36289 4.07872 4.30821 4.30497 4.27805C4.30497 4.27805 4.50105 4.26673 4.89322 4.24411C5.27784 4.22148 5.82462 4.19509 6.53353 4.16492C7.24245 4.13475 8.09466 4.10836 9.09016 4.08573C10.0857 4.06311 11.1943 4.0518 12.416 4.0518Z" fill="#282F2F"/>
+                        </svg>
+
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-below ">
+                <span>© 2009-2025 IGIHE Ltd</span>
+                <div class="app-way">
+                    
+                    <a href="#">
+                        <svg width="135" height="41" viewBox="0 0 135 41" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <rect width="135" height="40" transform="translate(0 0.791748)" fill="url(#pattern0_2833_6853)"/>
+                            <defs>
+                            <pattern id="pattern0_2833_6853" patternContentUnits="objectBoundingBox" width="1" height="1">
+                            <use xlink:href="#image0_2833_6853" transform="scale(0.0037037 0.0125)"/>
+                            </pattern>
+                            <image id="image0_2833_6853" width="270" height="80" preserveAspectRatio="none" xlink:href="data:image/png;base64,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"/>
+                            </defs>
+                        </svg>
+                    </a>
+                    <a href="#">
+                        <svg width="135" height="41" viewBox="0 0 135 41" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <rect width="135" height="40" transform="translate(0 0.791748)" fill="url(#pattern0_2833_6854)"/>
+                            <defs>
+                            <pattern id="pattern0_2833_6854" patternContentUnits="objectBoundingBox" width="1" height="1">
+                            <use xlink:href="#image0_2833_6854" transform="scale(0.00367647 0.0125)"/>
+                            </pattern>
+                            <image id="image0_2833_6854" width="272" height="80" preserveAspectRatio="none" xlink:href="data:image/png;base64,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"/>
+                            </defs>
+                        </svg>
+                    </a>
+                    
+
+
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script>
+
+
+let currentPosition = 0;
+        const cardWidth = 336;
+        const maxScroll = 2;
+
+        // Carousel functions
+        function scrollCarousel(direction) {
+            const track = document.getElementById('carouselTrack');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            
+            currentPosition += direction;
+            
+            if (currentPosition < 0) currentPosition = 0;
+            if (currentPosition > maxScroll) currentPosition = maxScroll;
+            
+            track.style.transform = `translateX(-${currentPosition * cardWidth}px)`;
+            
+            prevBtn.style.opacity = currentPosition === 0 ? '0.1' : '1';
+            nextBtn.style.opacity = currentPosition === maxScroll ? '0.1' : '1';
+        }
+       
+
+            // Auto-slide setup
+            let autoSlideInterval = setInterval(() => {
+                // Move forward
+                if (currentPosition < maxScroll) {
+                    scrollCarousel(1);
+                } else {
+                    // Reset to the start when reaching the end
+                    currentPosition = -1; // so next scrollCarousel(1) moves to 0
+                    scrollCarousel(1);
+                }
+            }, 3000); // change every 3 seconds
+
+            // Optional: pause auto-slide on hover
+            const carouselContainer = document.getElementById('carouselTrack').parentElement;
+            carouselContainer.addEventListener('mouseenter', () => clearInterval(autoSlideInterval));
+            carouselContainer.addEventListener('mouseleave', () => {
+                autoSlideInterval = setInterval(() => {
+                    if (currentPosition < maxScroll) {
+                        scrollCarousel(1);
+                    } else {
+                        currentPosition = -1;
+                        scrollCarousel(1);
+                    }
+                }, 3000);
+            });
+
+
+
+        // YouTube URL processing
+        // function getYouTubeVideoId(url) {
+        //     const regex = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/;
+        //     const match = url.match(regex);
+        //     return match ? match[1] : null;
+        // }
+        function getYouTubeVideoId(url) {
+                const match = url.match(/(?:youtube\.com\/(?:watch\?v=|embed\/)|youtu\.be\/)([\w-]{11})/);
+                return match ? match[1] : null;
+        }
+
+
+function playVideo(videoUrl, videoIndex) {
+    const lightbox = document.getElementById('videoLightbox');
+    const iframe = document.getElementById('lightboxVideo');
+    const loading = document.getElementById('lightboxLoading');
+    
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    
+    loading.style.display = 'block';
+    iframe.style.display = 'none';
+
+    //console.log(`The video url: ${videoUrl} , ${videoIndex}`);
+    // alert (`The video url: ${videoUrl} , ${videoIndex}`);
+
+    // function convertToEmbedUrl(url) {
+    //         const videoId = getYouTubeVideoId(url);
+    //         return videoId ? `https://www.youtube.com/embed/${videoId}` : null;
+    // }
+    
+    // const videoId = convertToEmbedUrl(videoUrl);
+    
+    // if (videoId) {
+    //     const embedUrl = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1&iv_load_policy=3&origin=${encodeURIComponent(window.location.origin)}&enablejsapi=1&playsinline=1`;
+        
+        
+    //     console.log(`The video url: ${embedUrl}`);
+
+    //     iframe.src = embedUrl;
+        
+    //     // Add delay to ensure proper loading
+    //     setTimeout(() => {
+    //         loading.style.display = 'none';
+    //         iframe.style.display = 'block';
+    //     }, 1000);
+    //     } else {
+    //         loading.innerHTML = '<div style="color: red;">Invalid YouTube URL</div>';
+    //     }
+    // }
+
+               function convertToEmbedUrl(url) {
+                    const videoId = getYouTubeVideoId(url);
+                    return videoId ? `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1&iv_load_policy=3&enablejsapi=1&playsinline=1` : null;
+                }
+
+                const embedUrl = convertToEmbedUrl(videoUrl);
+
+                if (embedUrl) {
+                    const iframe = document.getElementById('lightboxVideo');
+                    const loading = document.getElementById('lightboxLoading');
+
+                    iframe.src = embedUrl;
+
+                    setTimeout(() => {
+                        loading.style.display = 'none';
+                        iframe.style.display = 'block';
+                    }, 1000);
+                } else {
+                    loading.innerHTML = '<div style="color: red;">Invalid YouTube URL</div>';
+                }
+            
+        }
+        
+        function closeLightbox() {
+            const lightbox = document.getElementById('videoLightbox');
+            const iframe = document.getElementById('lightboxVideo');
+            const loading = document.getElementById('lightboxLoading');
+            
+            // Hide lightbox
+            lightbox.classList.remove('active');
+            document.body.style.overflow = ''; // Restore scrolling
+            
+            // Stop video playback
+            iframe.src = '';
+            
+            // Reset loading state
+            loading.style.display = 'block';
+            loading.innerHTML = '<div class="spinner"></div><div>Loading video...</div>';
+            iframe.style.display = 'none';
+        }
+
+        // Keyboard controls
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            const prevBtn = document.getElementById('prevBtn');
+            prevBtn.style.opacity = '0.1';
+        });
+
+    </script>
+</body>
+</html>
